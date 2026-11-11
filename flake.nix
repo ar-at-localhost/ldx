@@ -24,17 +24,15 @@
             inherit self system;
             pkgs = import inputs.nixpkgs {
               inherit system;
+              overlays = [inputs.pog.overlays.default];
             };
           }
       );
 
     mkOutputs = pkgs: {
-          ldx = pkgs.callPackage ./default.nix {
-            inherit (inputs) pog;
-          };
+          ldx = pkgs.callPackage ./default.nix {};
 
-          vimPlugins.ldx = pkgs.callPackage ./vim-plugin.nix {
-          };
+          vimPlugins.ldx = pkgs.callPackage ./vim-plugin.nix {};
         };
   in {
     packages = forEachSupportedSystem (
