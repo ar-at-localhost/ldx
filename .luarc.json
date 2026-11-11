@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "runtime": {
+    "version": "LuaJIT",
+    "path": [
+      "./lua/?.lua",
+      "./lua/?/init.lua"
+    ]
+  },
+  "workspace": {
+    "library": [
+      "${env:LDX_LOCAL____YALMS_LUA}",
+      "${env:LDX_LUV_LIBRARY}",
+      "${env:LDX_VIMPLUGINS_SNACKS_NVIM}",
+      "${env:LDX_VIM_RUNTIME}"
+    ]
+  },
+  "diagnostics": {
+    "globals": [
+      "__luacache",
+      "utf8"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+[
+  "vim",
+  "luv",
+  "../yalms/lua",
+  "nixpkgs:vimPlugins.snacks-nvim"
+]
