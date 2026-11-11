@@ -4,13 +4,10 @@ on:
     branches: [main]
 
 jobs:
-  build-pkg:
-    name: Build Nix package
+  checks:
+    name: Nix flake check
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: DeterminateSystems/determinate-nix-action@main
+      - uses: cachix/install-nix-action@v31
       - run: nix flake check
