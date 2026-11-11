@@ -26,7 +26,7 @@ See [Example](#example).
 
 Future versions will support evaluating the environment directly after syncing.
 
-> [!INFO]
+> [!NOTE]
 > LDX only updates the `workspace.library` field, and leaves the rest of `.luarc.json`
 untouched.
 
