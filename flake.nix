@@ -30,9 +30,9 @@
       );
 
     mkOutputs = pkgs: {
-          ldx = pkgs.callPackage ./default.nix {};
+          default = pkgs.callPackage ./default.nix {};
 
-          vimPlugins.ldx = pkgs.callPackage ./vim-plugin.nix {};
+          vimPlugins = pkgs.callPackage ./vim-plugin.nix {};
         };
   in {
     packages = forEachSupportedSystem (
