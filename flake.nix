@@ -35,9 +35,6 @@
 
           vimPlugins.ldx = pkgs.callPackage ./vim-plugin.nix {
           };
-
-          nixvimModules.ldx = pkgs.callPackage ./nixvim.nix {
-          };
         };
   in {
     packages = forEachSupportedSystem (
@@ -47,5 +44,7 @@
     checks = forEachSupportedSystem (
       {pkgs, ...}: mkOutputs pkgs
     );
+
+    nixvimModules.ldx = ./nixvim.nix;
   };
 }
