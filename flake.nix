@@ -39,6 +39,13 @@
       {pkgs, ...}: mkOutputs pkgs
     );
 
+    overlays.default = f: p: (let outputs = mkOutputs p; in {
+      ldx = outputs.ldx;
+      vimPlugins = p.vimPlugins // {
+        ldx = outputs.vimPlugin;
+      };
+    });
+
     checks = forEachSupportedSystem (
       {pkgs, ...}: mkOutputs pkgs
     );
