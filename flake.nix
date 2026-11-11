@@ -39,9 +39,9 @@
       {pkgs, ...}: mkOutputs pkgs
     );
 
-    overlays.default = f: p: (let outputs = mkOutputs p; in {
+    overlays.default = final: prev: (let outputs = mkOutputs prev; in {
       ldx = outputs.ldx;
-      vimPlugins = p.vimPlugins // {
+      vimPlugins = prev.vimPlugins // {
         ldx = outputs.vimPlugin;
       };
     });
