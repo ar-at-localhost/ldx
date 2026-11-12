@@ -178,3 +178,7 @@ Relative Lua workspaces can be packaged directly.
 - `../`
 - `./foo`
 - `./bar/baz/foo`
+
+## Similar Projects
+
+If you're looking for a similar solution outside of Nix ecosystem, check out [Lux](https://lux.lumen-labs.org/).
