@@ -53,8 +53,8 @@ Add `ldx` to your flake and add ldx to your dev shell.
     # ...
     outputs = {
         #...
-        # assuming system, pkgs variable
-        devShells."$system" = {
+        # assuming system, pkgs, default variable
+        devShells."$system".default = {
             packages = [
                 #...
                 ldx.packages.$system.default
@@ -71,6 +71,19 @@ Add `ldx` to your flake and add ldx to your dev shell.
     };
 }
 ```
+
+> [!TIP]
+> The flake also provides an overlay, `overlays.default`, which adds `ldx`, `vimPlugins.ldx` to `pkgs`.
+>
+> ```nix
+> {
+>   #...
+>   nixpkgs.overlays = [
+>     inputs.ldx.overlays.default
+>     #...
+>   ];
+> }
+> ```
 
 ## CLI Usage
 
