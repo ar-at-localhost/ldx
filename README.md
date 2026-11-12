@@ -140,7 +140,7 @@ These names can follow one of the following formats:
 
 ### Keyword
 
-Some dependencies may have a Keyword to add them. Currently,
+Some dependencies may have a keyword to add them. Currently,
 `vim` is only such dependency. It resolves Neovim runtime libraries.
 
 ### Nixpkgs
@@ -163,7 +163,7 @@ be reoslved from nixpkgs of the current flake.
 Packages from current flake or other relative flakes are added with relative
 flake URI. For example, `.#foo`, `..#bar` etc.
 
-#### Examples <-- markdownlint-ignore no-duplicate-heading>
+#### Examples
 
 - `..#foo`
 - `.#foo`
@@ -173,7 +173,7 @@ flake URI. For example, `.#foo`, `..#bar` etc.
 
 Relative Lua workspaces can be packaged directly.
 
-#### Examples <-- markdownlint-ignore no-duplicate-heading -->
+#### Examples
 
 - `../`
 - `./foo`
