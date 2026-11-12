@@ -46,7 +46,7 @@
     );
 
     overlays.default = final: prev: (let outputs = mkOutputs prev; in {
-      inherit (outputs) ldx;
+      ldx = outputs.default;
       vimPlugins = prev.vimPlugins // {
         ldx = outputs.vimPlugin;
       };
