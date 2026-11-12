@@ -3,8 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
+
     pog = {
       url = "github:jpetrucciani/pog";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    yalms = {
+      url = "github:ar-at-localhost/yalms";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -24,7 +30,7 @@
             inherit self system;
             pkgs = import inputs.nixpkgs {
               inherit system;
-              overlays = [inputs.pog.overlays.default];
+              overlays = [inputs.pog.overlays.default inputs.yalms.overlays.default];
             };
           }
       );
@@ -40,7 +46,7 @@
     );
 
     overlays.default = final: prev: (let outputs = mkOutputs prev; in {
-      ldx = outputs.ldx;
+      inherit (outputs) ldx;
       vimPlugins = prev.vimPlugins // {
         ldx = outputs.vimPlugin;
       };
